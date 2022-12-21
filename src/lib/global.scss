@@ -1,0 +1,26 @@
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+div.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 3pt;
+    margin-bottom: 12pt;
+    height: 48pt;
+
+    input {
+        height: 100%;
+        padding: 6pt;
+        box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+        background: pink;
+    }
+
+    label {
+        padding-left: 6pt;
+        font-weight: 600;
+    }
+}
