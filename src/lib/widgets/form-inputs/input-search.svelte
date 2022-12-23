@@ -6,10 +6,11 @@
     let { options } = schema;
     let { collectionId } = options;
 
-    let pb = new Pocketbase("http://digism.xyz:6346");
+    let pb = new Pocketbase(import.meta.env.VITE_DB_PATH);
 
     const get_collections = async (collectionId) => {
         let out = await pb.collection(collectionId).getFullList(200);
+        console.log(out);
         return out;
     };
 
@@ -26,6 +27,7 @@
     type="email"
     multiple
     on:change={handlChange}
+    bind:value
 />
 
 <datalist id={collectionId}>
