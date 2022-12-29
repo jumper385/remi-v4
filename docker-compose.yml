@@ -13,19 +13,21 @@ services:
       - "2040:8090"
     volumes:
       - ./db/pb_data:/pb_data
+    networks:
+            - local
 
   client:
-    environment:
-      - VITE_DB_PATH=http://db:2040
     build:
       context: ./client
       dockerfile: Dockerfile
     volumes:
-      - ./client/build:/build
       - ./client:/app
     ports:
       - "2041:3000"
-    links:
-      - "db"
     depends_on:
       - db
+    networks:
+            - local
+networks:
+  local:
+    driver: bridge
