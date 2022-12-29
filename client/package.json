@@ -19,6 +19,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@sveltejs/adapter-node": "^1.0.0",
 		"pocketbase": "^0.9.0",
 		"sass": "^1.57.1",
 		"svelte-markdown": "^0.2.3"

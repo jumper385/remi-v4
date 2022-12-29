@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    volumes:
+      - ./client/build:/build
+  db:
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+
+      args:
+        TARGETOS: linux
+        TARGETARCH: amd64
+        VERSION: 0.8.0
+    ports:
+      - "6346:8090"
+    volumes:
+      - ./db/pb_data:/pb_data
