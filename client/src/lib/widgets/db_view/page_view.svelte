@@ -1,5 +1,6 @@
 <script>
     export let collection_name;
+    export let child_collection;
 
     import { find_schema_by_name } from "$lib/helpers/db_schema";
     import Pocketbase from "pocketbase";
@@ -16,10 +17,55 @@
 
     let { schema } = find_schema_by_name(collection_name);
 
-    const getData = async (collection_name) => {
-        db_list = await pb.collection(collection_name).getFullList(200, {
+    const compile_collection = async (collection_name, child_collection) => {
+        /**Identify and Tag Parent Collection that doesnt have chil_collection covering the parent*/
+        // Get data from collections
+        let out = await pb.collection(collection_name).getFullList(200, {
             sort: "-updated",
         });
+        let childs = await pb.collection(child_collection).getFullList(200, {
+            expand: `${collection_name}_id`,
+        });
+
+        // Create sets of the ID's on both, parent and child
+        let parents = new Set(out.map((e) => e?.id));
+        let covered_parents = new Set([
+            ...childs
+                .map((e) => {
+                    let check_keys = new Set(Object.keys(e?.expand));
+                    if (check_keys.has(`${collection_name}_id`)) {
+                        return e.expand[`${collection_name}_id`];
+                    } else {
+                        return [];
+                    }
+                })
+                .reduce((acc, curr) => {
+                    console.log(curr);
+                    return [...curr.map((e) => e?.id), ...acc];
+                }, []),
+        ]);
+
+        // Find the differences
+        let diffs = new Set([...parents].filter((e) => covered_parents.has(e)));
+
+        // tag the differences on db_list object
+        db_list = out.map((e) => {
+            console.log(diffs.has(e.id));
+            return {
+                ...e,
+                hasChild: diffs.has(e.id),
+            };
+        });
+    };
+
+    const getData = async (collection_name) => {
+        if (child_collection) {
+            await compile_collection(collection_name, child_collection);
+        } else {
+            db_list = await pb
+                .collection(collection_name)
+                .getFullList(200, { sort: "-updated" });
+        }
     };
 
     const resetform = () => {
@@ -141,6 +187,7 @@
             {/if}
         {:catch err}
             <p>Error: {err.message}</p>
+            {console.log(err)}
         {/await}
     </div>
     {#if form_visible}

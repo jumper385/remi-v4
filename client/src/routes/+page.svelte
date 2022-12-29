@@ -30,6 +30,8 @@
 
 <h1>Remi - V4</h1>
 
+<p>Coverage</p>
+
 <div style="padding:24pt; box-sizing:border-box">
     {#if authReady}
         <button class="button" on:click={logout}>Logout</button>
