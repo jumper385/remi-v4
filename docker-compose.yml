@@ -22,7 +22,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./client/build:/build
-      - ./client:.
+      - ./client:./
     ports:
       - "2041:3000"
     links:
