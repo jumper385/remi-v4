@@ -23,8 +23,8 @@ services:
     ports:
       - "2041:3000"
     links:
-      - "db:database"
+      - "db"
     depends_on:
       - db
     environment:
-      - VITE_DB_PATH=db
+      - VITE_DB_PATH=http://db
