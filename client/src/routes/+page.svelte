@@ -24,8 +24,6 @@
         { name: "email", type: "email" },
         { name: "password", type: "password" },
     ];
-
-    console.log(import.meta.env.VITE_DB_PATH);
 </script>
 
 <h1>Remi - V4</h1>
