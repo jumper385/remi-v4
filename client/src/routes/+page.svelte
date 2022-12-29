@@ -5,6 +5,8 @@
 
     let pb = new Pocketbase(import.meta.env.VITE_DB_PATH);
 
+    console.log(import.meta.env.VITE_DB_PATH);
+
     let formdata = {};
     let authReady = pb.authStore.isValid;
 
