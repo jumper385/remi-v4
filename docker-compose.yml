@@ -27,4 +27,4 @@ services:
     depends_on:
       - db
     environment:
-      - VITE_DB_PATH=http://db
+      - VITE_DB_PATH=http://db:8090
