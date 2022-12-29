@@ -1,3 +1,0 @@
-import{S as o,i as l,s as d,k as c,q as m,l as p,m as h,r as f,h as r,b as u,C as _,B as i}from"../../../chunks/index-7ce20b08.js";function v(n){let e,s;return{c(){e=c("div"),s=m(`This project maps my typical design process. Hope this is fun. Refer to the
-    diagram for the relevant data model.`)},l(t){e=p(t,"DIV",{});var a=h(e);s=f(a,`This project maps my typical design process. Hope this is fun. Refer to the
-    diagram for the relevant data model.`),a.forEach(r)},m(t,a){u(t,e,a),_(e,s)},p:i,i,o:i,d(t){t&&r(e)}}}class y extends o{constructor(e){super(),l(this,e,null,v,d,{})}}export{y as default};
