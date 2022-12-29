@@ -14,9 +14,10 @@
         </p>
         <sub> Updated at {get_date_string(new Date(entry.updated))}</sub>
     </div>
-    <div class="description" style="line-height:150%; margin:0; padding:0;">
-        {entry.description || entry.response}
-    </div>
+    <!-- <p class="description" style="line-height:150%; margin:0; padding:0;">
+        
+    </p> -->
+    <SvelteMarkdown source={entry.description || entry.response} />
 </div>
 
 <style lang="scss">
