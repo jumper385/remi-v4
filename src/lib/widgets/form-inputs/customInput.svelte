@@ -12,7 +12,7 @@
 <div class="form-row">
     <Label icon="ri-book-line" name={schema.name} />
     {#if schema.type == "text"}
-        <input type="text" name={schema.name} id={schema.name} bind:value />
+        <textarea type="text" name={schema.name} id={schema.name} bind:value />
     {:else if schema.type == "number"}
         <input type="number" name={schema.name} id={schema.name} bind:value />
     {:else if schema.type == "relation"}

@@ -1,6 +1,6 @@
 * {
     font-family: 'Open Sans', sans-serif;
-    color: #2c3e50
+    color: #2c3e50;
 }
 
 body {
@@ -28,11 +28,13 @@ div.form-row {
     box-sizing: border-box;
 
     input,
-    select {
+    select,
+    textarea {
         box-sizing: border-box;
         border: none;
         outline: none;
-        background: none
+        background: none;
+        line-height: 150%;
     }
 
     label {

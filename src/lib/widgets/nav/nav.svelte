@@ -4,28 +4,48 @@
 
 <nav>
     <!-- System Pages -->
-    <NavLink href="/" icon="ri-psychotherapy-line" text="Home" />
+    <NavLink href="/" icon="ri-home-line" text="Home" />
     <NavLink href="/tutorial" icon="ri-book-line" text="Tutorial" />
+
+    <br />
+    <!-- Design Scoping -->
+    <NavLink
+        href="/interview_questions"
+        icon="ri-question-answer-line"
+        text="Interview Questions"
+    />
 
     <br />
     <!-- Waterfall Sections -->
     <NavLink href="/user_needs" icon="ri-user-heart-line" text="User Needs" />
-    <NavLink href="/" icon="ri-compasses-2-line" text="Requirements" />
-    <NavLink href="/" icon="ri-shape-line" text="Specification" />
     <NavLink
-        href="/"
+        href="/requirements"
+        icon="ri-compasses-2-line"
+        text="Requirements"
+    />
+    <NavLink
+        href="/specifications"
+        icon="ri-shape-line"
+        text="Specifications"
+    />
+    <NavLink
+        href="/design_outputs"
         icon="ri-character-recognition-line"
         text="Design Outputs"
     />
 
     <br />
     <!-- Supporting Globals -->
-    <NavLink href="/" icon="ri-psychotherapy-line" text="Brainstorm" />
-    <NavLink href="/" icon="ri-search-eye-line" text="Research" />
-    <NavLink href="/" icon="ri-booklet-line" text="Compliance" />
-    <NavLink href="/" icon="ri-rotate-lock-line" text="Constraint" />
-    <NavLink href="/" icon="ri-test-tube-line" text="Test" />
-    <NavLink href="/" icon="ri-a-b" text="Test Outcome" />
+    <NavLink
+        href="/brainstorm"
+        icon="ri-psychotherapy-line"
+        text="Brainstorm"
+    />
+    <NavLink href="/research" icon="ri-search-eye-line" text="Research" />
+    <NavLink href="/compliance" icon="ri-booklet-line" text="Compliance" />
+    <NavLink href="/constraint" icon="ri-rotate-lock-line" text="Constraint" />
+    <NavLink href="/test" icon="ri-test-tube-line" text="Test" />
+    <NavLink href="/outcome" icon="ri-a-b" text="Test Outcome" />
 </nav>
 
 <style lang="scss">

@@ -150,6 +150,19 @@ export const db_schema = [
                 }
             },
             {
+                "id": "usg2vakb",
+                "name": "interview_id",
+                "type": "relation",
+                "system": false,
+                "required": false,
+                "unique": false,
+                "options": {
+                    "maxSelect": 1000,
+                    "collectionId": "6mc3msew3crp8o9",
+                    "cascadeDelete": true
+                }
+            },
+            {
                 "id": "psfuiqk4",
                 "name": "priority",
                 "type": "number",
@@ -236,6 +249,19 @@ export const db_schema = [
                 }
             },
             {
+                "id": "1nyvcj63",
+                "name": "user_need_id",
+                "type": "relation",
+                "system": false,
+                "required": false,
+                "unique": false,
+                "options": {
+                    "maxSelect": 1000,
+                    "collectionId": "cyszuyq5g0v3uam",
+                    "cascadeDelete": true
+                }
+            },
+            {
                 "id": "0wpnyt5n",
                 "name": "approved",
                 "type": "bool",
@@ -298,6 +324,19 @@ export const db_schema = [
                 }
             },
             {
+                "id": "dsbylleq",
+                "name": "requirement_id",
+                "type": "relation",
+                "system": false,
+                "required": false,
+                "unique": false,
+                "options": {
+                    "maxSelect": 1000,
+                    "collectionId": "uimu5brid80icrj",
+                    "cascadeDelete": true
+                }
+            },
+            {
                 "id": "oe0dqtjn",
                 "name": "approved",
                 "type": "bool",
@@ -357,6 +396,19 @@ export const db_schema = [
                     "min": null,
                     "max": null,
                     "pattern": ""
+                }
+            },
+            {
+                "id": "skoogw6w",
+                "name": "specification_id",
+                "type": "relation",
+                "system": false,
+                "required": false,
+                "unique": false,
+                "options": {
+                    "maxSelect": 1000,
+                    "collectionId": "gh4fqlwlohfx5ec",
+                    "cascadeDelete": true
                 }
             },
             {

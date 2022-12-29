@@ -33,7 +33,9 @@
 <datalist id={collectionId}>
     {#await get_collections(collectionId) then collections}
         {#each collections as collection}
-            <option value={collection.id}>{collection.name}</option>
+            <option value={collection.id}
+                >{collection.name || collection.response}</option
+            >
         {/each}
     {/await}
 </datalist>
