@@ -17,7 +17,9 @@
     <!-- <p class="description" style="line-height:150%; margin:0; padding:0;">
         
     </p> -->
-    <SvelteMarkdown source={entry.description || entry.response} />
+    <div style="line-height:175%">
+        <SvelteMarkdown source={entry.description || entry.response} />
+    </div>
 </div>
 
 <style lang="scss">
