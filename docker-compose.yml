@@ -27,4 +27,4 @@ services:
     depends_on:
       - db
     environment:
-      - VITE_DB_PATH=db:database
+      - VITE_DB_PATH=db
