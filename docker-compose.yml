@@ -35,7 +35,7 @@ services:
     restart: unless-stopped
     ports:
       - "4030:80"
-      - "80:4031"
+      - "4031:4031"
     volumes:
       - ./nginx-conf:/etc/nginx/conf.d
     depends_on:
