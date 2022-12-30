@@ -12,7 +12,7 @@ services:
     ports:
       - "2040:8090"
     volumes:
-      - ./db/pb_data:/pb_data
+      - ./db/pb_data:/pb/pocketbase/pb_data
     networks:
       - local
 
