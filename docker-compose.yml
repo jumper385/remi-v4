@@ -34,7 +34,8 @@ services:
     container_name: webserver
     restart: unless-stopped
     ports:
-      - "80:80"
+      - "4030:80"
+      - "4031:4031"
     volumes:
       - ./nginx-conf:/etc/nginx/conf.d
     depends_on:
