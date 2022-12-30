@@ -14,7 +14,7 @@ services:
     volumes:
       - ./db/pb_data:/pb_data
     networks:
-            - local
+      - local
 
   client:
     build:
@@ -27,7 +27,21 @@ services:
     depends_on:
       - db
     networks:
-            - local
+      - local
+
+  webserver:
+    image: nginx:mainline-alpine
+    container_name: webserver
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx-conf:/etc/nginx/conf.d
+    depends_on:
+      - client
+    networks:
+      - local
+
 networks:
   local:
     driver: bridge
